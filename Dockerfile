@@ -35,3 +35,7 @@ RUN R -q -e 'ArchR::installExtraPackages()'
 RUN R -q -e 'library("ArchR"); addArchRGenome("hg38")'
 
 #; addArchRGenome("hg19"); addArchRGenome("mm9"); addArchRGenome("mm10");'
+RUN R -q -e 'library("ArchR"); addArchRGenome("mm10")'
+
+# Install Cairo package
+RUN R -q -e 'options(repos=c(CRAN=Sys.getenv("CRAN"))); install.packages("Cairo")'
