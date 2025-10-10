@@ -43,9 +43,9 @@ RUN R -q -e 'options(repos=c(CRAN=Sys.getenv("CRAN"))); install.packages("Cairo"
 # Install viridis and update all packages
 RUN R -q -e 'BiocManager::install("viridis", update = TRUE, ask = FALSE)'
 
-# Install packages using devtools
-RUN R -q -e 'devtools::install_github("kassambara/ggpubr")'
-RUN R -q -e 'devtools::install_github("AllenInstitute/H5weaver")'
-
 # Install remaining Bioconductor packages
 RUN R -q -e 'BiocManager::install(c("Nebulosa", "hise"), ask = FALSE)'
+
+RUN R -q -e 'devtools::install_github("kassambara/ggpubr")'
+
+#RUN R -q -e 'devtools::install_github("AllenInstitute/H5weaver")'
