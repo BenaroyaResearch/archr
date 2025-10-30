@@ -49,3 +49,5 @@ RUN R -q -e 'BiocManager::install(c("Nebulosa", "hise"), ask = FALSE)'
 RUN R -q -e 'devtools::install_github("kassambara/ggpubr")'
 
 #RUN R -q -e 'devtools::install_github("AllenInstitute/H5weaver")'
+RUN curl https://rclone.org/install.sh | bash
+
