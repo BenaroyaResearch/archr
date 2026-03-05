@@ -1,0 +1,31 @@
+# ArchR Environment Setup
+![alt text](image.png)
+
+**Requires R version 4.4.2.**
+
+This repo provides an `renv.lock` file with all the packages needed to run ArchR.
+
+## Setup
+
+1. Create a new project directory and open an R console in it.
+
+2. Download the lock file:
+
+   ```r
+   download.file(
+     url = "https://raw.githubusercontent.com/BenaroyaResearch/archr/main/renv.lock",
+     destfile = "renv.lock"
+   )
+   ```
+
+3. Initialize the environment:
+
+   ```r
+   renv::init()
+   ```
+
+   When prompted, select **option 1** ("Restore the project from the lockfile.") to install all packages.
+
+4. Restart your R session when installation completes.
+
+> **Note:** You may see a warning that the project is "out-of-sync." This is expected — it simply means you haven't written any R code that references ArchR yet. You can safely ignore it.
